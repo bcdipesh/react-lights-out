@@ -44,6 +44,7 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
   }
 
   function flipCellsAround(coord) {
+    console.log(coord);
     setBoard((oldBoard) => {
       const [y, x] = coord.split("-").map(Number);
 
@@ -80,7 +81,7 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
       row.push(
         <Cell
           key={coord}
-          isList={board[y][x]}
+          isLit={board[y][x]}
           flipCellsAroundMe={() => flipCellsAround(coord)}
         />
       );
